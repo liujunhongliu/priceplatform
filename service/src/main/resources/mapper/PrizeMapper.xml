@@ -12,7 +12,7 @@
 
 
 
-    <select id="queryPriceList" resultMap="priceMap" >
+    <select id="queryPrizeList" resultMap="priceMap" >
         select * from p_prize
     </select>
 
