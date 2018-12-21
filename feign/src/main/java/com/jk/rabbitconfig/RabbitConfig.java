@@ -11,6 +11,6 @@ public class RabbitConfig {
         //@Bean 声明当前方法为bean实例方法 把返回值注入到spring环境中
     public Queue queueMessages() {
         //参数为队列名称
-        return new Queue("myqueue");
+        return new Queue("myqueu");
     }
 }

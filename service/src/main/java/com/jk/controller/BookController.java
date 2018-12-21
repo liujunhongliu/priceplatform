@@ -9,7 +9,7 @@ import java.util.Map;
 @Controller
 public class BookController {
 
-    @RabbitListener(queues = "myqueue")
+    @RabbitListener(queues = "myqueu")
     public void listenerBookMessage(String message){
         Map map = JSON.parseObject(message, Map.class);
         System.out.println("message = [" + map.toString() + "]");
