@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.bone.IssueMapper">
+<!-- 查询发布定制需求页面：定制需求的发布范围的下拉框 -->
+    <!--<select id="findIssueRangeSelect" resultType="com.jk.model.bone.IssueRangeBean" >
+        select * from t_issue_range
+    </select>-->
+<!-- 查询发布定制需求页面：根据主键id，查询定制产品所属类目，共四级，第一级为发布范围的下拉框 -->
+    <select id="findEquipmentSelectGetById" parameterType="String" resultType="com.jk.model.bone.EquipmentBean">
+        select * from t_equipment where pid = #{id}
+    </select>
+
+<!--  -->
+    <insert id="saveProduct" parameterType="com.jk.model.bone.ProductBean">
+        insert into t_product (id,name,equipment_id,count,type,inlet_min,inlet_max,outlet_min,outlet_max,
+                               unit,flowmeter,voltage_regulator,outer_box,outer_box_texture,detail,file,demand_type,
+                                   user_id)
+        values (#{id},#{name},#{equipmentId},#{count},#{type},#{inletMin},#{inletMax},#{outletMin},
+                #{outletMax},#{unit},#{flowmeter},#{voltageRegulator},#{outerBox},#{outeBoxTexture},
+                #{detail},#{file},#{demandType},#{userId})
+    </insert>
+</mapper>

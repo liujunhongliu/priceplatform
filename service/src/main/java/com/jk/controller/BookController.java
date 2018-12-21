@@ -1,4 +1,4 @@
-package com.jk.comtroller;
+package com.jk.controller;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
