@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.customprice.CustomPriceMapper">
+
+    <resultMap id="customPriceMap" type="com.jk.model.customprice.CustomPriceBean">
+        <id column="id" property="id"></id>
+        <result column="project_number" property="projectNumber"></result>
+        <result column="project_name" property="projectName"></result>
+        <result column="buyer_name" property="buyerName"></result>
+        <result column="provider_name" property="providerName"></result>
+        <result column="sum_number" property="sumNumber"></result>
+        <result column="avg_jsprice" property="avgJsprice"></result>
+        <result column="chj_jsprice" property="chjJsprice"></result>
+        <result column="avg_jyprice" property="avgJyprice"></result>
+        <result column="chj_jyprice" property="chjJyprice"></result>
+        <result column="fb_date" property="fbDate"></result>
+        <result column="xm_status" property="xmStatus"></result>
+        <result column="first_type" property="firstType"></result>
+        <result column="second_type" property="secondType"></result>
+        <result column="three_type" property="threeType"></result>
+    </resultMap>
+
+
+
+    <select id="queryCustomPriceList" resultMap="customPriceMap" >
+        select * from custom_price
+    </select>
+
+
+
+</mapper>
