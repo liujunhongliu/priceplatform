@@ -1,4 +1,4 @@
-package com.jk.comtroller;
+package com.jk.controller;
 
 import com.jk.PriceServiceApi;
 import com.jk.model.PrizeBean;

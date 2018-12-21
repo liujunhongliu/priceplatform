@@ -1,4 +1,4 @@
-package com.jk.comtroller.customprice;
+package com.jk.controller.customprice;
 
 import com.jk.cumtomprice.CustomPriceServiceApi;
 import com.jk.model.customprice.CustomPriceBean;
