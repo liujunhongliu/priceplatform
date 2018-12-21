@@ -3,7 +3,9 @@ package com.jk.controller.customprice;
 import com.jk.cumtomprice.CustomPriceServiceApi;
 import com.jk.model.customprice.CustomPriceBean;
 import com.jk.service.customprice.CustomPriceService;
+import com.jk.utils.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,7 +16,7 @@ public class CumtomPriceController implements CustomPriceServiceApi {
     private CustomPriceService customPriceService;
 
     @Override
-    public List<CustomPriceBean> queryCustomPriceList() {
-        return customPriceService.queryCustomPriceList();
+    public PageResult queryCustomPriceList(@RequestBody CustomPriceBean customPriceBean) {
+        return customPriceService.queryCustomPriceList(customPriceBean);
     }
 }

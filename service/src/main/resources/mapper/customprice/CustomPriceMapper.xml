@@ -24,9 +24,47 @@
 
 
 
+    <!-- 查询条数 -->
+    <select id="queryUserCount"  resultMap="int">
+        select count(1) from custom_price
+        where 1=1
+        <include refid="customPriceWhere"></include>
+    </select>
+
     <select id="queryCustomPriceList" resultMap="customPriceMap" >
         select * from custom_price
+        where 1 = 1
+        <include refid="customPriceWhere"></include>
+        LIMIT #{startIndex},#{endIndex};
     </select>
+    <!-- 条件查询 -->
+    <sql id="customPriceWhere">
+        <if test="customPriceBean.projectName != null and customPriceBean.projectName != ''">
+            and project_name like '%${customPriceBean.projectName}%'
+        </if>
+
+        <if test="customPriceBean.buyerName != null and customPriceBean.buyerName != ''">
+            and buyer_name like '%${customPriceBean.buyerName}%'
+        </if>
+
+        <if test="customPriceBean.providerName != null and customPriceBean.providerName != ''">
+            and provider_name like '%${customPriceBean.providerName}%'
+        </if>
+
+        <if test="customPriceBean.xmStatus != null">
+            and xm_status = #{customPriceBean.xmStatus}
+        </if>
+
+        <if test="customPriceBean.firstType != null">
+            and first_type = #{customPriceBean.firstType}
+        </if>
+        <if test="customPriceBean.secondType != null">
+            and second_type = #{customPriceBean.secondType}
+        </if>
+        <if test="customPriceBean.threeType != null">
+            and three_type = #{customPriceBean.threeType}
+        </if>
+    </sql>
 
 
 

@@ -3,7 +3,7 @@ spring:
     #应用名称 便于注册中心管理相关应用
     name: eurekaserver
 server:
-  port: 8088
+  port: 8081
 eureka:
   client:
     #声明当前的eureka是一个服务端
@@ -12,4 +12,4 @@ eureka:
     #是否自动检索生产者 设置为false 否则没有生产者会报错
     fetch-registry: false
     service:
-      defaultZone: http://localhost:8088/eureka
+      defaultZone: http://localhost:8081/eureka

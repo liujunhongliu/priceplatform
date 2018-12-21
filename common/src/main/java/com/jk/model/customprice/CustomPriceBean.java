@@ -64,6 +64,15 @@ public class CustomPriceBean {
      *三级类目
      */
     private Integer threeType;
+    /**
+     * 分页的页数
+     */
+    private Integer page;
+    /**
+     * 分页的每页条数
+     */
+    private Integer rows;
+
 
 
 
