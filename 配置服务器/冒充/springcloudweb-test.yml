@@ -8,8 +8,6 @@ spring:
         enabled: true
       cluster-name: elasticsearch
       cluster-nodes: localhost:9300
-  application:
-    name: springcloudweb
   thymeleaf:
     mode: HTML5
     encoding: UTF-8
